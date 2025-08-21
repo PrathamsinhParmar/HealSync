@@ -55,7 +55,15 @@ const HealthChatApp = () => {
       }
       
       const result = await response.text();
-      return result;
+      
+      // Parse JSON response and extract output field
+      try {
+        const jsonResponse = JSON.parse(result);
+        return jsonResponse.output || result;
+      } catch (parseError) {
+        // If not valid JSON, return original text
+        return result;
+      }
     } catch (error) {
       console.error('Webhook error:', error);
       throw error;
