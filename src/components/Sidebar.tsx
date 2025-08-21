@@ -1,4 +1,4 @@
-import { Heart, LogIn, UserPlus } from "lucide-react";
+import { Home, Search, Layers, User, ArrowUp, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface SidebarProps {
@@ -15,27 +15,49 @@ const Sidebar = ({ className }: SidebarProps) => {
         </div>
       </div>
       
-      {/* Spacer */}
-      <div className="flex-1"></div>
-      
-      {/* Auth Buttons */}
-      <div className="flex flex-col gap-3">
+      {/* Navigation Items */}
+      <nav className="flex flex-col gap-4 mb-auto">
         <Button
           variant="ghost"
           size="icon"
           className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
-          title="Login"
         >
-          <LogIn className="w-5 h-5" />
+          <Home className="w-5 h-5" />
         </Button>
         
         <Button
           variant="ghost"
           size="icon"
           className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
-          title="Sign Up"
         >
-          <UserPlus className="w-5 h-5" />
+          <Search className="w-5 h-5" />
+        </Button>
+        
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
+        >
+          <Layers className="w-5 h-5" />
+        </Button>
+      </nav>
+      
+      {/* Bottom Items */}
+      <div className="flex flex-col gap-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
+        >
+          <User className="w-5 h-5" />
+        </Button>
+        
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
+        >
+          <ArrowUp className="w-5 h-5" />
         </Button>
       </div>
     </div>
