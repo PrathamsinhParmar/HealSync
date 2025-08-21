@@ -106,9 +106,9 @@ const ChatInput = ({ onSendMessage }: ChatInputProps) => {
               variant="ghost"
               size="icon"
               onClick={() => fileInputRef.current?.click()}
-              className="w-10 h-10 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-health-primary transition-smooth"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-health-primary transition-smooth"
             >
-              <Image className="w-5 h-5" />
+              <Image className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
             
             {/* Voice Input Button */}
@@ -116,13 +116,13 @@ const ChatInput = ({ onSendMessage }: ChatInputProps) => {
               variant="ghost"
               size="icon"
               onClick={toggleRecording}
-              className={`w-10 h-10 rounded-xl transition-smooth ${
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl transition-smooth ${
                 isRecording 
                   ? 'bg-health-primary text-white hover:bg-health-primary/90' 
                   : 'hover:bg-health-subtle text-muted-foreground hover:text-health-primary'
               }`}
             >
-              {isRecording ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+              {isRecording ? <MicOff className="w-4 h-4 sm:w-5 sm:h-5" /> : <Mic className="w-4 h-4 sm:w-5 sm:h-5" />}
             </Button>
             
             {/* Send Button */}
