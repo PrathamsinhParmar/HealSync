@@ -1,4 +1,4 @@
-import { Home, Search, Layers, User, ArrowUp, Heart } from "lucide-react";
+import { Heart, LogIn, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface SidebarProps {
@@ -15,49 +15,27 @@ const Sidebar = ({ className }: SidebarProps) => {
         </div>
       </div>
       
-      {/* Navigation Items */}
-      <nav className="flex flex-col gap-4 mb-auto">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
-        >
-          <Home className="w-5 h-5" />
-        </Button>
-        
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
-        >
-          <Search className="w-5 h-5" />
-        </Button>
-        
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
-        >
-          <Layers className="w-5 h-5" />
-        </Button>
-      </nav>
+      {/* Spacer */}
+      <div className="flex-1"></div>
       
-      {/* Bottom Items */}
-      <div className="flex flex-col gap-4">
+      {/* Auth Buttons */}
+      <div className="flex flex-col gap-3">
         <Button
           variant="ghost"
           size="icon"
           className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
+          title="Login"
         >
-          <User className="w-5 h-5" />
+          <LogIn className="w-5 h-5" />
         </Button>
         
         <Button
           variant="ghost"
           size="icon"
           className="w-12 h-12 rounded-xl hover:bg-health-subtle text-muted-foreground hover:text-foreground transition-smooth"
+          title="Sign Up"
         >
-          <ArrowUp className="w-5 h-5" />
+          <UserPlus className="w-5 h-5" />
         </Button>
       </div>
     </div>

@@ -133,7 +133,7 @@ const HealthChatApp = () => {
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <div className="border-b border-border bg-card p-6">
+        <div className="border-b border-border bg-card p-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
               <h1 className="text-3xl font-bold bg-health-gradient bg-clip-text text-transparent">
@@ -176,7 +176,7 @@ const HealthChatApp = () => {
         </div>
         
         {/* Input Area */}
-        <div className="border-t border-border bg-card p-6">
+        <div className="border-t border-border bg-card p-4">
           <ChatInput onSendMessage={handleSendMessage} />
         </div>
       </div>
