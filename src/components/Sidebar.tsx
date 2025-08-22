@@ -8,7 +8,7 @@ interface SidebarProps {
 
 const Sidebar = ({ className, onClose }: SidebarProps) => {
   return (
-    <div className={`bg-sidebar-gradient border-r border-border w-20 flex flex-col items-center py-4 ${className}`}>
+    <div className={`bg-sidebar-gradient border-r border-border w-20 h-full flex flex-col items-center py-4 ${className}`}>
       {/* Mobile Close Button */}
       {onClose && (
         <Button

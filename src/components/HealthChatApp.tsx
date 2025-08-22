@@ -139,7 +139,7 @@ const HealthChatApp = () => {
       )}
       
       {/* Sidebar */}
-      <div className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 fixed md:relative z-50 h-full`}>
+      <div className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 fixed md:relative z-50 h-screen md:h-full`}>
         <Sidebar onClose={() => setIsSidebarOpen(false)} />
       </div>
       
@@ -153,17 +153,17 @@ const HealthChatApp = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden h-8 w-8 hover:bg-health-subtle"
+                className="md:hidden h-10 w-10 hover:bg-health-subtle"
                 onClick={() => setIsSidebarOpen(true)}
               >
-                <Menu className="h-4 w-4" />
+                <Menu className="h-5 w-5" />
               </Button>
               
               <div className="text-center flex-1">
                 <h1 className="text-2xl font-bold bg-health-gradient bg-clip-text text-transparent">
                   Health Assistant
                 </h1>
-                <p className="text-muted-foreground text-sm mt-1">
+                <p className="text-muted-foreground text-sm mt-1 hidden md:block">
                   Your AI-powered health companion for personalized advice and support
                 </p>
               </div>
