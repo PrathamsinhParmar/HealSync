@@ -32,12 +32,15 @@ All colors MUST be HSL.
     /* Health-themed gradient colors */
     --health-primary: 142 76% 36%;
     --health-secondary: 173 58% 39%;
-    --health-accent: 197 37% 24%;
+    --health-accent: 159 74% 42%;
+    --health-glow: 170 70% 55%;
     
-    /* Custom gradients */
-    --gradient-health: linear-gradient(135deg, hsl(142 76% 36%), hsl(173 58% 39%));
-    --gradient-health-subtle: linear-gradient(135deg, hsl(142 76% 36% / 0.1), hsl(173 58% 39% / 0.1));
+    /* Enhanced health gradients */
+    --gradient-health: linear-gradient(135deg, hsl(142 76% 36%), hsl(173 58% 39%), hsl(159 74% 42%));
+    --gradient-health-subtle: linear-gradient(135deg, hsl(142 76% 36% / 0.15), hsl(173 58% 39% / 0.15));
+    --gradient-background: linear-gradient(135deg, hsl(222.2 84% 4.9%) 0%, hsl(220 60% 8%) 25%, hsl(215 50% 12%) 50%, hsl(212 45% 10%) 75%, hsl(217.2 32.6% 12%) 100%);
     --gradient-sidebar: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 8% 6%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 3.9%), hsl(235 12% 6%));
     
     /* Enhanced shadows */
     --shadow-health: 0 10px 30px -10px hsl(142 76% 36% / 0.3);
@@ -118,7 +121,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-outfit;
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(217.2 32.6% 12%) 100%);
+    background: var(--gradient-background);
     min-height: 100vh;
   }
 }

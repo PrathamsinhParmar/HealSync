@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import Sidebar from "./Sidebar";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
 import { useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
 
 interface Message {
   id: string;
@@ -23,6 +25,7 @@ const HealthChatApp = () => {
   ]);
   
   const [isLoading, setIsLoading] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -126,22 +129,44 @@ const HealthChatApp = () => {
   };
 
   return (
-    <div className="flex h-screen bg-background text-foreground">
+    <div className="flex h-screen bg-background-gradient text-foreground">
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+      
       {/* Sidebar */}
-      <Sidebar />
+      <div className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 fixed md:relative z-50 h-full`}>
+        <Sidebar onClose={() => setIsSidebarOpen(false)} />
+      </div>
       
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <div className="border-b border-border bg-card p-4">
+        <div className="border-b border-border bg-card-gradient p-3 shadow-lg">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold bg-health-gradient bg-clip-text text-transparent">
-                Health Assistant
-              </h1>
-              <p className="text-muted-foreground mt-2">
-                Your AI-powered health companion for personalized advice and support
-              </p>
+            <div className="flex items-center gap-3">
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden h-8 w-8 hover:bg-health-subtle"
+                onClick={() => setIsSidebarOpen(true)}
+              >
+                <Menu className="h-4 w-4" />
+              </Button>
+              
+              <div className="text-center flex-1">
+                <h1 className="text-2xl font-bold bg-health-gradient bg-clip-text text-transparent">
+                  Health Assistant
+                </h1>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Your AI-powered health companion for personalized advice and support
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -176,7 +201,7 @@ const HealthChatApp = () => {
         </div>
         
         {/* Input Area */}
-        <div className="border-t border-border bg-card p-4">
+        <div className="border-t border-border bg-card-gradient p-3 shadow-lg">
           <ChatInput onSendMessage={handleSendMessage} />
         </div>
       </div>

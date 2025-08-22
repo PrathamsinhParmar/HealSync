@@ -79,7 +79,9 @@ export default {
 			backgroundImage: {
 				'health-gradient': 'var(--gradient-health)',
 				'health-subtle': 'var(--gradient-health-subtle)',
-				'sidebar-gradient': 'var(--gradient-sidebar)'
+				'sidebar-gradient': 'var(--gradient-sidebar)',
+				'background-gradient': 'var(--gradient-background)',
+				'card-gradient': 'var(--gradient-card)'
 			},
 			boxShadow: {
 				'health': 'var(--shadow-health)',
